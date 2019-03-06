@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 
-export const InlineTagButtonBordered = ({  children, className, }) => {
+export const InlineTagButtonBordered = ({  children, className }) => {
   return (
     <span className={`tag button ${className}`}>
       { children }
