@@ -7,6 +7,11 @@ const repacked = (Klass) => {
   );
 };
 
+const klass = (klass) => {
+  return klass ? klass : '';
+};
+
 export default {
   repacked,
+  klass,
 };
