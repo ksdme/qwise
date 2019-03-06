@@ -1,3 +1,5 @@
+import './vendors/bulma/bulma.min.css';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 
