@@ -1,3 +1,5 @@
+import './App.css';
+
 import React, { Component } from 'react';
 
 import { QuestionProvider } from './providers/Questions';
@@ -24,7 +26,9 @@ class App extends Component {
               <InlineTagButton>me!</InlineTagButton>
             </InlineTagButtonSet>
 
-            <Question url='http://localhost:5000/Selection_027.bmp' />
+            <Question
+              className="has-large-padding"
+              url='http://localhost:5000/Selection_216.bmp' />
 
             <OptionPanel fixed
               leftContent={<Control><ArrowButton direction='left' /></Control>}
