@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Button } from '../Button/Button';
+import { Control } from '../Control/Control';
 
 
 export const OptionButton = ({ children, ...props }) => {
@@ -11,11 +12,11 @@ export const OptionButton = ({ children, ...props }) => {
     props.outline = true;
 
   return (
-    <p className="control">
+    <Control>
       <Button {...props}>
         { children }
       </Button>
-    </p>
+    </Control>
   );
 };
 
