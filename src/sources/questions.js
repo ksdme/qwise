@@ -7,19 +7,19 @@ export const QuestionSource = {
     1: {
       a: "A",
       tags: ["Math", "Medium"],
-      q: "http://localhost:5000/Selection_027.bmp",
+      q: "http://localhost:5000/Selection_216.bmp",
     },
 
     2: {
       a: "A",
       tags: ["Math", "Medium"],
-      q: "http://localhost:5000/Selection_027.bmp",
+      q: "http://localhost:5000/Selection_216.bmp",
     },
 
     3: {
       a: "A",
       tags: ["Math", "Medium"],
-      q: "http://localhost:5000/Selection_027.bmp",
+      q: "http://localhost:5000/Selection_216.bmp",
     },
   },
 
