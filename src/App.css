@@ -1,8 +1,9 @@
 :root {
   --standard-padding: 16px;
   --standard-large-padding: 32px;
+  --standard-xl-padding: 48px;
 }
 
-.has-large-padding {
-  padding: var(--standard-large-padding);
+.has-xl-padding {
+  padding: var(--standard-xl-padding);
 }
