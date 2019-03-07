@@ -33,6 +33,18 @@ export const QuestionSource = {
     });
   
     return filtered_questions;
+  },
+
+  getAvailableTags() {
+    const tagSet = new Set();
+
+    Object.keys(this._plain).forEach((key) => {
+      this._plain[key].tags.forEach((tag) => {
+        tagSet.add(tag);
+      });
+    });
+
+    return tagSet;
   }
 
 };
