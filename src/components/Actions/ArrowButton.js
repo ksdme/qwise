@@ -13,7 +13,7 @@ export const ArrowButton = ({ direction }) => {
   }
 
   return (
-    <Button danger>
+    <Button light>
       { symbol }
     </Button>
   );
