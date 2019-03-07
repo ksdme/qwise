@@ -6,19 +6,19 @@ export const QuestionSource = {
   _plain: {
     1: {
       a: "A",
-      tags: ["Math", "Medium"],
+      tags: ["Math", "Medium", "Polymorphism"],
       q: "http://localhost:5000/Selection_216.bmp",
     },
 
     2: {
       a: "A",
-      tags: ["Math", "Medium"],
+      tags: ["Math", "Medium", "Integration"],
       q: "http://localhost:5000/Selection_216.bmp",
     },
 
     3: {
       a: "A",
-      tags: ["Math", "Medium"],
+      tags: ["Math", "Medium", "Algebra"],
       q: "http://localhost:5000/Selection_216.bmp",
     },
   },
