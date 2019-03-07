@@ -2,12 +2,12 @@ import './App.css';
 
 import React, { Component } from 'react';
 
+import { QuestionSource } from './sources/questions';
 import { QuestionProvider } from './providers/Questions';
+import { AppTags } from './components/AppTags/AppTags';
 import { Question } from './components/Question/Question';
 import { Section } from './components/Section/Section';
 import { OptionPanel } from './components/Options/OptionPanel';
-import { InlineTagButton } from './components/InlineTagButton/InlineTagButton';
-import { InlineTagButtonSet } from './components/InlineTagButton/InlineTagButtonSet';
 import { Control } from './components/Control/Control';
 import { ArrowButton } from './components/Actions/ArrowButton';
 
@@ -15,19 +15,13 @@ import { ArrowButton } from './components/Actions/ArrowButton';
 class App extends Component {
   render() {
     return (
-      <QuestionProvider>
+      <QuestionProvider value={QuestionSource}>
         <Section>
           <div className="container is-centered">
-            <InlineTagButtonSet centered>
-              <InlineTagButton>Hello</InlineTagButton>
-              <InlineTagButton>World</InlineTagButton>
-              <InlineTagButton>This</InlineTagButton>
-              <InlineTagButton>is</InlineTagButton>
-              <InlineTagButton>me!</InlineTagButton>
-            </InlineTagButtonSet>
+            <AppTags />
 
             <Question
-              className="has-large-padding"
+              className="has-xl-padding"
               url='http://localhost:5000/Selection_216.bmp' />
 
             <OptionPanel fixed
