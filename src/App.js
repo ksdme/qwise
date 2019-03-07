@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import { QuestionProvider } from './providers/Questions';
+import { Question } from './components/Question/Question';
 import { Section } from './components/Section/Section';
 import { OptionPanel } from './components/Options/OptionPanel';
 import { InlineTagButton } from './components/InlineTagButton/InlineTagButton';
@@ -20,6 +21,9 @@ class App extends Component {
               <InlineTagButton>is</InlineTagButton>
               <InlineTagButton>me!</InlineTagButton>
             </InlineTagButtonSet>
+
+            <Question url='http://localhost:5000/Selection_027.bmp' />
+            <Question url='http://localhost:5000/Selection_027.bmp' />
 
             <OptionPanel />
           </div>
