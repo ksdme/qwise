@@ -7,7 +7,7 @@ export class OptionPanel extends React.Component {
 
   render() {
     return (
-      <div className="field is-grouped">
+      <div className="field is-grouped is-grouped-centered">
         <OptionButton>A</OptionButton>
         <OptionButton>B</OptionButton>
         <OptionButton>C</OptionButton>
