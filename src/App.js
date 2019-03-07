@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import { QuestionProvider } from './providers/Questions';
 import { Section } from './components/Section/Section';
+import { OptionPanel } from './components/Options/OptionPanel';
 import { InlineTagButton } from './components/InlineTagButton/InlineTagButton';
 import { InlineTagButtonSet } from './components/InlineTagButton/InlineTagButtonSet';
 
@@ -20,23 +21,7 @@ class App extends Component {
               <InlineTagButton>me!</InlineTagButton>
             </InlineTagButtonSet>
 
-            <div class="field is-grouped">
-              <p class="control">
-                <a class="button is-info is-outlined has-margin">A</a>
-              </p>
-              <p class="control">
-                <a class="button is-info is-outlined has-margin">B</a>
-              </p>
-              <p class="control">
-                <a class="button is-info is-outlined has-margin">C</a>
-              </p>
-              <p class="control">
-                <a class="button is-info is-outlined has-margin">D</a>
-              </p>
-              <p class="control">
-                <a class="button is-primary has-margin">Submit</a>
-              </p>
-            </div>
+            <OptionPanel />
           </div>
         </Section>
       </QuestionProvider>
