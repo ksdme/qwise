@@ -16,9 +16,20 @@ const ifClass = (klass, conditional) => {
 };
 
 const ifClasses = (map) => {
-  const classes = Object.keys(map).filter((key) => {
+  const { _, ...rest } = map;
+
+  const classes = Object.keys(rest).filter((key) => {
     return map[key] === true;
   });
+
+  if (_) {
+    _.forEach((vectorClass) => {
+      const [klass, condition] = vectorClass;
+
+      if (condition)
+        classes.push(klass);
+    });
+  }
 
   return classes.join(' ');
 };
