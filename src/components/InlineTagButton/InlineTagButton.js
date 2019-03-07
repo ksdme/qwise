@@ -5,8 +5,14 @@ import { react } from '../../dollar';
 
 
 export const InlineTagButtonBordered = ({ children, className }) => {
+  const classes = react.ifClasses({
+    tag: true,
+    button: true,
+    _: [[className, !!className]],
+  });
+
   return (
-    <span className={`tag button ${react.klass(className)}`}>
+    <span className={classes}>
       { children }
     </span>
   );
