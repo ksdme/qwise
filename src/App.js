@@ -6,6 +6,8 @@ import { Section } from './components/Section/Section';
 import { OptionPanel } from './components/Options/OptionPanel';
 import { InlineTagButton } from './components/InlineTagButton/InlineTagButton';
 import { InlineTagButtonSet } from './components/InlineTagButton/InlineTagButtonSet';
+import { Control } from './components/Control/Control';
+import { ArrowButton } from './components/Actions/ArrowButton';
 
 
 class App extends Component {
@@ -23,9 +25,11 @@ class App extends Component {
             </InlineTagButtonSet>
 
             <Question url='http://localhost:5000/Selection_027.bmp' />
-            <Question url='http://localhost:5000/Selection_027.bmp' />
 
-            <OptionPanel />
+            <OptionPanel fixed
+              leftContent={<Control><ArrowButton direction='left' /></Control>}
+              rightContent={<Control><ArrowButton direction='right' /></Control>}
+            />
           </div>
         </Section>
       </QuestionProvider>
