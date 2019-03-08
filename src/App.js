@@ -44,8 +44,8 @@ class App extends Component {
       if (this.state.current.status === true) {
         return (
           <Message primary>
-            Correct Answer <br/>
-            Good Work!
+            <span role="img" aria-label="Yay!">🎉</span> Correct Answer <br/>
+            <span className="tag is-light">Good Work!</span>
           </Message>
         );
       }
@@ -53,8 +53,8 @@ class App extends Component {
       if (this.state.current.status === false) {
         return (
           <Message danger>
-            Wrong Answer <br/>
-            Correct Option is { this.state.current.a }
+            <span role="img" aria-label="Wrong">😞</span> Wrong Answer <br/>
+            <span className="tag is-light">Correct Option is { this.state.current.a }</span>
           </Message>
         );
       }
