@@ -3,7 +3,6 @@ import './App.css';
 import React, { Component } from 'react';
 
 import { QuestionSource } from './sources/questions';
-import { QuestionProvider } from './providers/Questions';
 import { AppTags } from './components/AppTags/AppTags';
 import { Question } from './components/Question/Question';
 import { Section } from './components/Section/Section';
@@ -27,6 +26,9 @@ class App extends Component {
         status: null,
       },
     };
+
+    // Questions Source
+    this.questions = QuestionSource;
   }
 
   onSubmitAnswer(selected) {
@@ -66,24 +68,24 @@ class App extends Component {
 
   render() {
     return (
-      <QuestionProvider value={QuestionSource}>
-        <Section>
-          <div className="container is-centered">
-            <AppTags onTagSetChanged={(l) => console.log(l)} />
+      <Section>
+        <div className="container is-centered">
+          <AppTags
+            tags={this.questions.getAvailableTags()}
+            onTagSetChanged={(l) => console.log(l)} />
 
-            <Question
-              className="has-xl-padding"
-              url={this.state.current.q} />
+          <Question
+            className="has-xl-padding"
+            url={this.state.current.q} />
 
-            <OptionPanel fixed
-              onSubmit={this.onSubmitAnswer.bind(this)}
-              leftContent={<Control><ArrowButton direction='left' /></Control>}
-              rightContent={<Control><ArrowButton direction='right' /></Control>}
-              bottomContent={this.answerSelectedToComponent()}
-            />
-          </div>
-        </Section>
-      </QuestionProvider>
+          <OptionPanel fixed
+            onSubmit={this.onSubmitAnswer.bind(this)}
+            leftContent={<Control><ArrowButton direction='left' /></Control>}
+            rightContent={<Control><ArrowButton direction='right' /></Control>}
+            bottomContent={this.answerSelectedToComponent()}
+          />
+        </div>
+      </Section>
     );
   }
 }
