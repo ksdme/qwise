@@ -15,7 +15,6 @@ export class AppTags extends React.Component {
   }
 
   tagSelection(enabled, tag) {
-    console.log(enabled, tag);
     const { onTagSetChanged } = this.props;
 
     if (enabled)
