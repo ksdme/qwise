@@ -20,9 +20,9 @@ export const OptionButton = ({ children, ...props }) => {
   );
 };
 
-export const SubmitButton = ({ children }) => {
+export const SubmitButton = ({ children, ...props }) => {
   return (
-    <OptionButton primary filled>
+    <OptionButton primary filled {...props}>
       { children }
     </OptionButton>
   );

@@ -33,7 +33,25 @@ export class OptionPanel extends React.Component {
     });
   }
 
+  localOnSubmit(onSubmit) {
+    const options = this.state.options;
+    let selected = null;
+    let flag = false;
+
+    Object.keys(options).forEach((key) => {
+      if (flag) return;
+
+      flag = options[key] === true;
+      if (flag) selected = key;
+    });
+
+    if (flag) onSubmit(selected);
+  }
+
   render() {
+    const { onSubmit } = this.props;
+    const wrappedOnSubmit = () => this.localOnSubmit(onSubmit);
+
     const topClasses = react.ifClasses({
       box: true,
       fixed: this.props.fixed,
@@ -55,9 +73,14 @@ export class OptionPanel extends React.Component {
             ))
           }
 
-          <SubmitButton>Submit</SubmitButton>
+          <SubmitButton onClick={wrappedOnSubmit}>
+            Submit
+          </SubmitButton>
+
           { this.props.rightContent }
         </div>
+
+        { this.props.bottomContent }
       </div>
     );
   }
