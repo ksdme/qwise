@@ -11,13 +11,15 @@ export class OptionPanel extends React.Component {
   constructor() {
     super();
 
+    this.baseOptions = {
+      A: false,
+      B: false,
+      C: false,
+      D: false,
+    };
+
     this.state = {
-      options: {
-        A: false,
-        B: false,
-        C: false,
-        D: false,
-      },
+      options: { ...this.baseOptions },
     };
   }
 
@@ -43,6 +45,10 @@ export class OptionPanel extends React.Component {
 
       flag = options[key] === true;
       if (flag) selected = key;
+    });
+
+    this.setState({
+      options: { ...this.baseOptions },
     });
 
     if (flag) onSubmit(selected);
