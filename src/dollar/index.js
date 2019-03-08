@@ -5,4 +5,5 @@ import random from './random';
 export {
   array,
   react,
+  random,
 };
