@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import { react } from '../../dollar';
@@ -15,9 +16,16 @@ export class InlineTagButtonBordered extends React.Component {
   }
 
   onTagClick() {
+    let { onClick } = this.props;
+    if (!onClick) onClick = () => {};
+
     this.setState({
       clicked: !this.state.clicked,
     });
+
+    // Indicates if the tag is selected
+    // hence is a negated value
+    onClick(!this.state.clicked);
   }
 
   render() {
@@ -42,3 +50,9 @@ export class InlineTagButtonBordered extends React.Component {
 export const InlineTagButton = styled(InlineTagButtonBordered)`
   border: none;
 `;
+
+InlineTagButtonBordered.propTypes = {
+  onClick: PropTypes.func,
+};
+
+InlineTagButton.propTypes = InlineTagButtonBordered.propTypes;
