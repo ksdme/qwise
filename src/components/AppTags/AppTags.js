@@ -1,13 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { QuestionContext } from '../../providers/Questions';
 import { InlineTagButton } from '../InlineTagButton/InlineTagButton';
 import { InlineTagButtonSet } from '../InlineTagButton/InlineTagButtonSet';
 
 
 export class AppTags extends React.Component {
-  static contextType = QuestionContext;
 
   constructor() {
     super();
@@ -27,14 +25,13 @@ export class AppTags extends React.Component {
   }
 
   render() {
-    const questions = this.context;
     const inlineTags = [];
 
     const onClickTag = (element) => {
       return (enabled) => this.tagSelection(enabled, element);
     };
 
-    questions.getAvailableTags().forEach((element) => {
+    this.props.tags.forEach((element) => {
       inlineTags.push((
 
         <InlineTagButton key={element} onClick={onClickTag(element)}>
@@ -55,4 +52,9 @@ export class AppTags extends React.Component {
 
 AppTags.propTypes = {
   onTagSetChanged: PropTypes.func,
+  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
+
+AppTags.defaultProps = {
+  tags: [],
+}
