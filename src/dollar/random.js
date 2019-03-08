@@ -14,7 +14,7 @@ const nonRecurringRandIntGenerator = (start, end) => {
     if (array.length < 1)
       fillSamples();
 
-    const vector = array.slice(randInt(0, array.length - 1), 1);
+    const vector = array.splice(randInt(0, array.length - 1), 1);
     return vector[0];
   };
 };
