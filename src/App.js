@@ -19,6 +19,7 @@ class App extends Component {
     super();
 
     this.state = {
+      list: [],
       current: {
         a: "A",
         tags: ["Math", "Medium", "Algebra"],
@@ -68,7 +69,7 @@ class App extends Component {
       <QuestionProvider value={QuestionSource}>
         <Section>
           <div className="container is-centered">
-            <AppTags />
+            <AppTags onTagSetChanged={(l) => console.log(l)} />
 
             <Question
               className="has-xl-padding"
