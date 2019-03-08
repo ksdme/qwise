@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { Button } from '../Button/Button';
 
 
-export const ArrowButton = ({ direction }) => {
+export const ArrowButton = ({ direction, onClick }) => {
   let symbol = null;
 
   switch (direction) {
@@ -13,9 +14,13 @@ export const ArrowButton = ({ direction }) => {
   }
 
   return (
-    <Button light>
+    <Button onClick={onClick} light>
       { symbol }
     </Button>
   );
 
+};
+
+ArrowButton.propTypes = {
+  onClick: PropTypes.func,
 };
