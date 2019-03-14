@@ -76,6 +76,15 @@ class App extends Component {
 
   answerSelectedToComponent() {
     if (this.state.status !== null) {
+      if (this.state.a === 'not-available') {
+        return (
+          <Message>
+            Answer Unavailable <br/>
+            <span className="tag is-light">You go girl!</span>
+          </Message>
+        );
+      }
+
       if (this.state.status === true) {
         return (
           <Message primary>
@@ -130,6 +139,7 @@ class App extends Component {
             onTagSetChanged={this.onTagSelectionUpdate.bind(this)} />
 
           <Question
+            sixty
             className="has-xl-padding"
             url={this.state.q} />
 
